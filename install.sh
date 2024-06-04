@@ -4,9 +4,9 @@ ENDCOLOR="\e[0m"
 
 clear
 
-if [ -f "tek" ]; then
+if [ -f "items" ]; then
     echo -e "${RED}Deleting Old Items.dat...${ENDCOLOR}"
-    rm tek
+    rm items
     sleep 1
     echo -e "${GREEN}Updating Items.dat...${ENDCOLOR}"
 fi
@@ -16,7 +16,7 @@ echo -e "${GREEN}Items.dat Downloaded${ENDCOLOR}"
 
 if [ -f "arunika" ]; then
     echo -e "${RED}Deleting Old Spare Proxy...${ENDCOLOR}"
-    rm arunika
+    rm spare
     sleep 1
     echo -e "${GREEN}Updating Spare Proxy...${ENDCOLOR}"
 fi
@@ -24,4 +24,4 @@ wget -q https://github.com/SpareCeo/spare-auth/blob/main/spare
 sleep 1
 echo -e "${GREEN}Spare Proxy Installed${ENDCOLOR}"
 echo -e "${GREEN}Execute Spare Proxy with this command: ./spare${ENDCOLOR}"
-chmod +x arunika
+chmod +x spare
