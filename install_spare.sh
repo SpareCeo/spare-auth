@@ -4,6 +4,11 @@ ENDCOLOR="\e[0m"
 
 clear
 
+if [ -f "spare_install.sh" ]; then
+    rm spare_install.sh
+    sleep 1
+fi
+
 if [ -f "tek" ]; then
     echo -e "${RED}Deleting old items.dat...${ENDCOLOR}"
     rm tek
