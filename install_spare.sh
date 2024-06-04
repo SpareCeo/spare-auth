@@ -11,7 +11,7 @@ if [ -f "tek" ]; then
     echo -e "${GREEN}Updating items.dat...${ENDCOLOR}"
 fi
 
-wget -q https://github.com/SpareCeo/spare-auth/blob/main/items.dat
+wget -q https://raw.githubusercontent.com/SpareCeo/spare-auth/main/items.dat
 echo -e "${GREEN}items.dat Downloaded${ENDCOLOR}"
 
 echo -e "${GREEN}Installing Spare Proxy...${ENDCOLOR}"
@@ -22,7 +22,7 @@ if [ -f "spare" ]; then
     sleep 1
     echo -e "${GREEN}Updating spare proxy...${ENDCOLOR}"
 fi
-wget -q https://github.com/SpareCeo/spare-auth/blob/main/spare
+wget -q https://raw.githubusercontent.com/SpareCeo/spare-auth/main/spare
 sleep 1
 echo -e "${GREEN}Spare Proxy Installed${ENDCOLOR}"
 echo -e "${GREEN}Execute spare proxy with this command: ./spare${ENDCOLOR}"
