@@ -14,7 +14,7 @@ fi
 wget -q https://github.com/SpareCeo/spare-auth/blob/main/items.dat
 echo -e "${GREEN}Items.dat Downloaded${ENDCOLOR}"
 
-if [ -f "arunika" ]; then
+if [ -f "spare" ]; then
     echo -e "${RED}Deleting Old Spare Proxy...${ENDCOLOR}"
     rm spare
     sleep 1
