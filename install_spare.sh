@@ -4,24 +4,26 @@ ENDCOLOR="\e[0m"
 
 clear
 
-if [ -f "items" ]; then
-    echo -e "${RED}Deleting Old Items.dat...${ENDCOLOR}"
-    rm items
+if [ -f "tek" ]; then
+    echo -e "${RED}Deleting old items.dat...${ENDCOLOR}"
+    rm tek
     sleep 1
-    echo -e "${GREEN}Updating Items.dat...${ENDCOLOR}"
+    echo -e "${GREEN}Updating items.dat...${ENDCOLOR}"
 fi
 
-wget -q https://github.com/SpareCeo/spare-auth/blob/main/items.dat
-echo -e "${GREEN}Items.dat Downloaded${ENDCOLOR}"
+wget -q https://github.com/SpareCeo/spare-auth/main/install_spare.sh
+echo -e "${GREEN}items.dat Downloaded${ENDCOLOR}"
 
+echo -e "${GREEN}Installing Spare Proxy...${ENDCOLOR}"
+sleep 1
 if [ -f "spare" ]; then
-    echo -e "${RED}Deleting Old Spare Proxy...${ENDCOLOR}"
+    echo -e "${RED}Deleting old spare proxy...${ENDCOLOR}"
     rm spare
     sleep 1
-    echo -e "${GREEN}Updating Spare Proxy...${ENDCOLOR}"
+    echo -e "${GREEN}Updating spare proxy...${ENDCOLOR}"
 fi
-wget -q https://github.com/SpareCeo/spare-auth/blob/main/spare
+wget -q https://github.com/AmertaByte/Arunika-Proxy/raw/main/arunika
 sleep 1
 echo -e "${GREEN}Spare Proxy Installed${ENDCOLOR}"
-echo -e "${GREEN}Execute Spare Proxy with this command: ./spare${ENDCOLOR}"
+echo -e "${GREEN}Execute spare proxy with this command: ./spare${ENDCOLOR}"
 chmod +x spare
