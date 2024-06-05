@@ -16,7 +16,11 @@ if [ -f "tek" ]; then
 fi
 
 # Download items.dat
-wget -qN https://raw.githubusercontent.com/SpareCeo/spare-auth/main/items.dat
+echo -e "${GREEN}Downloading items.dat...${ENDCOLOR}"
+if ! wget -qN https://raw.githubusercontent.com/SpareCeo/spare-auth/main/items.dat; then
+    echo -e "${RED}Failed to download items.dat.${ENDCOLOR}"
+    exit 1
+fi
 echo -e "${GREEN}items.dat Downloaded${ENDCOLOR}"
 
 # Install Spare Proxy
@@ -26,7 +30,12 @@ if [ -f "spare" ]; then
     rm spare
     echo -e "${GREEN}Updating spare proxy...${ENDCOLOR}"
 fi
-wget -qN https://raw.githubusercontent.com/SpareCeo/spare-auth/main/spare
+
+echo -e "${GREEN}Downloading Spare Proxy...${ENDCOLOR}"
+if ! wget -qN https://raw.githubusercontent.com/SpareCeo/spare-auth/main/spare; then
+    echo -e "${RED}Failed to download Spare Proxy.${ENDCOLOR}"
+    exit 1
+fi
 echo -e "${GREEN}Spare Proxy Installed${ENDCOLOR}"
 echo -e "${GREEN}Execute spare proxy with this command: ./spare${ENDCOLOR}"
 chmod +x spare
